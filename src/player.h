@@ -1,0 +1,8 @@
+//
+// Created by smabd on 10/16/2025.
+//
+
+#ifndef FARMING_SIMULATOR_PLAYER_H
+#define FARMING_SIMULATOR_PLAYER_H
+
+#endif //FARMING_SIMULATOR_PLAYER_H
