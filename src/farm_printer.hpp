@@ -2,7 +2,7 @@
 
 class FarmPrinter {
 private:
-    Farm *farm; //We are storing a pointer to a farm
+    Farm *farm;
 
 public:
     FarmPrinter(Farm *farm);

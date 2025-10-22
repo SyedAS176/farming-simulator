@@ -1,7 +1,7 @@
 #include <string>
 
 #include "farm.hpp"
-#include "farm_printer.h"
+#include "farm_printer.hpp"
 
 FarmPrinter::FarmPrinter(Farm *farm) : farm(farm) {}
 
