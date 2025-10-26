@@ -9,5 +9,7 @@ public:
     int row();
     int column();
     void move_right();
+    void move_left();
+    void move_up();
     void move_down();
 };

@@ -20,14 +20,18 @@ int main() {
 
         if(player_input == "q") {
             game_in_progress = false;
-        } else if(player_input == "d") {
-            player.move_right();
-        } else if(player_input == "s") {
+        } else if (player_input == "w") {
+            player.move_up();
+        } else if (player_input == "s") {
             player.move_down();
-        } else if(player_input == "c") {
+        } else if (player_input == "d") {
+            player.move_right();
+        } else if (player_input == "a") {
+            player.move_left();
+        } else if (player_input == "c") {
             Carrot *carrot = new Carrot();
             farm.plant(player.row(), player.column(), carrot);
-        } else if(player_input == "e") {
+        } else if (player_input == "e") {
             farm.end_day();
         }
     }
