@@ -12,4 +12,5 @@ public:
     void move_left();
     void move_up();
     void move_down();
+    bool in_bounds(int row, int column);
 };
