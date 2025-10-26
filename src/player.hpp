@@ -6,11 +6,13 @@ private:
     int current_column = 0;
 
 public:
+    // Getter methods
     int row();
     int column();
+
+    // Movement methods
     void move_right();
     void move_left();
     void move_up();
     void move_down();
-    bool in_bounds(int row, int column);
 };
