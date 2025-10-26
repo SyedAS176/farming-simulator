@@ -15,11 +15,13 @@ Farm::Farm(int rows, int columns, Player *player) : rows(rows), columns(columns)
     }
 }
 
-int Farm::number_of_rows() { // Return the # of rows of the farm
+// Return the # of rows of the farm
+int Farm::number_of_rows() {
     return rows;
 }
 
-int Farm::number_of_columns() { // Returns the # of columns of the farm
+// Returns the # of columns of the farm
+int Farm::number_of_columns() {
     return columns;
 }
 
@@ -33,9 +35,11 @@ std::string Farm::get_symbol(int row, int column) {
 
 // Farm class controls planting logic
 void Farm::plant(int row, int column, Plot *plot) {
-    Plot *current_plot = plots.at(row).at(column);
-    plots.at(row).at(column) = plot;
+    Plot *current_plot = plots.at(row).at(column);  // We grab the Plot object pointer; the @ (player) is not a Plot object
+    if (current_plot->symbol() == ".") {            // Allows you to plant only if the current plot is empty (has a "." Plot object)
+    plots.at(row).at(column) = plot;                // Remember @ is the printer level but "." is the Plot object level
     delete current_plot;
+    }
 }
 
 // Farm class controls day logic
