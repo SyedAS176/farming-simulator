@@ -8,4 +8,5 @@ class Soil : public Plot {
 public:
     std::string symbol() override;
     void end_day() override;
+    bool is_mature() override;
 };

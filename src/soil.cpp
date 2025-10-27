@@ -7,3 +7,7 @@ std::string Soil::symbol() {
 void Soil::end_day() {
     // no-op
 }
+
+bool Soil::is_mature() {
+    return false; // Soil is never harvestable
+}

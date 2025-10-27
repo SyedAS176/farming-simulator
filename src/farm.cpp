@@ -2,6 +2,9 @@
 #include <vector>
 
 #include "farm.hpp"
+
+#include <bits/ios_base.h>
+
 #include "soil.hpp"
 
 Farm::Farm(int rows, int columns, Player *player) : rows(rows), columns(columns), player(player) {
@@ -37,14 +40,18 @@ std::string Farm::get_symbol(int row, int column) {
 void Farm::plant(int row, int column, Plot *plot) {
     Plot *current_plot = plots.at(row).at(column);  // We grab the Plot object pointer; the @ (player) is not a Plot object
     if (current_plot->symbol() == ".") {            // Allows you to plant only if the current plot is empty (has a "." Plot object)
-    plots.at(row).at(column) = plot;                // Remember @ is the printer level but "." is the Plot object level
-    delete current_plot;
+        plots.at(row).at(column) = plot;            // Remember @ is the printer level but "." is the Plot object level
+        delete current_plot;
     }
 }
 
-// Farm class harvest controls logic
+// Farm class harvest controls logic; pretty similar to the plant method
 void Farm::harvest(int row, int column) {
-    Plot *current_plot = plots.at(row).at(column);
+    Plot *current_plot = plots.at(row).at(column);  // We grab the Plot object pointer; could be a crop or soil
+    if (current_plot->is_mature()) {                // Check if the crop is mature (harvestable)
+        plots.at(row).at(column) = new Soil();      // Replace the harvested crop with an empty soil plot (represented by ".")
+        delete current_plot;                        // Delete the old crop object to free memory
+    }
 }
 
 // Farm class controls day logic
