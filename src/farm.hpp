@@ -24,6 +24,7 @@ public:
 
     // Farm functionality logic methods
     void plant(int row, int column, Plot *plot);
+    void harvest(int row, int column);
     void end_day();
 
     // Movement logic methods for the player

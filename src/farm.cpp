@@ -42,6 +42,11 @@ void Farm::plant(int row, int column, Plot *plot) {
     }
 }
 
+// Farm class harvest controls logic
+void Farm::harvest(int row, int column) {
+    Plot *current_plot = plots.at(row).at(column);
+}
+
 // Farm class controls day logic
 void Farm::end_day() {
     for(int i = 0; i < rows; i++) {
