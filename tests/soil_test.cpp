@@ -10,8 +10,13 @@ TEST_CASE( "it returns a dot as its symbol" ) {
     REQUIRE( soil.symbol() == "." );
 }
 
-TEST_CASE( "end_day is a no-op" ) {
+TEST_CASE( "end_day() is a no-op" ) {
     Soil soil;
     soil.end_day();
     REQUIRE( soil.symbol() == "." );
+}
+
+TEST_CASE( "it is never mature" ) {
+    Soil soil;
+    REQUIRE( soil.is_mature() == false );  // Soil is never considered mature.
 }
