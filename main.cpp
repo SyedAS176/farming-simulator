@@ -1,4 +1,5 @@
 #include <iostream>
+#include <algorithm>
 
 #include "src/player.hpp"
 #include "src/farm.hpp"
@@ -19,6 +20,9 @@ int main() {
         ansi_clear();
         std::cout << printer.pp() << std::endl;
         std::cin >> player_input;
+
+        // Convert input to lowercase for case-insensitivity
+        std::transform(player_input.begin(), player_input.end(), player_input.begin(), ::tolower);
 
         if(player_input == "q") {
             game_in_progress = false;
