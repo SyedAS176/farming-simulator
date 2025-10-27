@@ -8,17 +8,13 @@
 TEST_CASE( "it returns a v as its when it is a seedling" ) {
     Carrot carrot;
     REQUIRE( carrot.symbol() == "v" );
+    REQUIRE(!carrot.is_mature() == true); // It is true that the carrot is not mature
+
 }
 
-TEST_CASE( "it returns a V when the carrot is half-grown" ) {
+TEST_CASE("Carrot matures after one day") {
     Carrot carrot;
-    carrot.end_day();
-    REQUIRE( carrot.symbol() == "V" );
-}
-
-TEST_CASE( "it returns a W when the carrot is fully grown" ) {
-    Carrot carrot;
-    carrot.end_day();
-    carrot.end_day();
-    REQUIRE( carrot.symbol() == "W" );
+    carrot.end_day(); // Age becomes 1
+    REQUIRE(carrot.symbol() == "V");
+    REQUIRE(carrot.is_mature() == true); // It is true that the carrot is mature now
 }
