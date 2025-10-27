@@ -30,9 +30,9 @@ int Farm::number_of_columns() {
 
 std::string Farm::get_symbol(int row, int column) {
     if(player->row() == row && player->column() == column) {
-        return "@";
+        return "@";                             // Player's position is printed as '@'
     } else {
-        return plots.at(row).at(column)->symbol();
+        return plots.at(row).at(column)->symbol(); // Soil or other plot types are printed normally
     }
 }
 
