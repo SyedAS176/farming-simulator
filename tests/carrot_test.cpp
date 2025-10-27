@@ -12,7 +12,7 @@ TEST_CASE( "it returns a v as its when it is a seedling" ) {
 
 }
 
-TEST_CASE("Carrot matures after one day") {
+TEST_CASE( "Carrot matures after one day" ) {
     Carrot carrot;
     carrot.end_day(); // Age becomes 1
     REQUIRE(carrot.symbol() == "V");
