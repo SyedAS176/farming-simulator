@@ -25,6 +25,12 @@ int Farm::number_of_columns() {
     return columns;
 }
 
+// Returns the # of days elapsed
+int Farm::get_day() {
+    return day;
+}
+
+
 std::string Farm::get_symbol(int row, int column) {
     if(player->row() == row && player->column() == column) {
         return "@";                             // Player's position is printed as '@'
@@ -53,6 +59,7 @@ void Farm::harvest(int row, int column) {
 
 // Farm class controls day logic
 void Farm::end_day() {
+    day +=1;    // Increment the in-game day
     for(int i = 0; i < rows; i++) {
         for(int j = 0; j < columns; j++) {
             plots.at(i).at(j)->end_day();
