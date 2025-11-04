@@ -17,7 +17,7 @@ int main() {
     print_legend(); // Print legend on first running the game
 
     while(game_in_progress) {
-        ansi_clear();
+        // ansi_clear(); not needed
         std::cout << printer.pp() << std::endl;
         std::cin >> player_input;
 
