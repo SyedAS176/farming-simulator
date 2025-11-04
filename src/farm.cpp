@@ -2,9 +2,6 @@
 #include <vector>
 
 #include "farm.hpp"
-
-#include <bits/ios_base.h>
-
 #include "soil.hpp"
 
 Farm::Farm(int rows, int columns, Player *player) : rows(rows), columns(columns), player(player) {
