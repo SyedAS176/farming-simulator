@@ -7,7 +7,8 @@
 class Carrot : public Plot {
 private:
     int age = 0;
-    int mature_age = 1;
+    int sprout_age = 1;
+    int mature_age = 2; // 1 day to maturity after sprout
 
 public:
     std::string symbol() override;

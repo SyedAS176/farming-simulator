@@ -3,10 +3,12 @@
 #include "carrot.hpp"
 
 std::string Carrot::symbol() {
-    if(age < mature_age) {
-        return "v"; // Not mature yet
+    if(age < sprout_age) {
+        return "#"; // Seedling still; tilled soil
+    } else if (age < mature_age) {
+        return "c"; // Not mature yet
     } else {
-        return "V"; // Fully grown plant (harvestable)
+        return "C"; // Fully grown plant (harvestable)
     }
 }
 
