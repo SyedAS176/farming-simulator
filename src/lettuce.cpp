@@ -19,3 +19,7 @@ void Lettuce::end_day() {
 bool Lettuce::is_mature() {
     return age >= mature_age;
 }
+
+bool Lettuce::is_watered() {
+    return age >= sprout_age;
+}
