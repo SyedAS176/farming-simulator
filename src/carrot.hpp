@@ -9,7 +9,7 @@ private:
     int age = 0;
     int sprout_age = 1; // 1 day to sprout
     int mature_age = 2; // 1 day to maturity after sprout
-    bool is_watered = false;
+    bool watered = false;
 
 public:
     std::string symbol() override;
