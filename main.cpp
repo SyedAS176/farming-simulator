@@ -5,6 +5,12 @@
 #include "src/farm.hpp"
 #include "src/farm_printer.hpp"
 #include "src/carrot.hpp"
+#include "src/lettuce.hpp"
+#include "src/spinach.hpp"
+#include "src/beet.hpp"
+#include "src/brussels_sprouts.hpp"
+
+
 #include "src/ansi_clear.hpp"
 #include "src/legend.hpp"
 
@@ -37,11 +43,25 @@ int main() {
         } else if (player_input == "c") {
             Carrot *carrot = new Carrot();
             farm.plant(player.row(), player.column(), carrot);
+        } else if (player_input == "l") {
+            Lettuce *lettuce = new Lettuce();
+            farm.plant(player.row(), player.column(), lettuce);
+        } else if (player_input == "s") {
+            Spinach *spinach = new Spinach();
+            farm.plant(player.row(), player.column(), spinach);
+        } else if (player_input == "b") {
+            Beet *beet = new Beet();
+            farm.plant(player.row(), player.column(), beet);
+        } else if (player_input == "bs") {
+            BrusselsSprouts *brussels_sprouts = new BrusselsSprouts();
+            farm.plant(player.row(), player.column(), brussels_sprouts);
+        } else if (player_input == "t") {
+            farm.water(player.row(), player.column());
         } else if (player_input == "e") {
             farm.end_day();
         } else if (player_input == "h") {
             farm.harvest(player.row(), player.column());
-        } else if (player_input == "l") {
+        } else if (player_input == "?") {
             print_legend();
         }
     }
