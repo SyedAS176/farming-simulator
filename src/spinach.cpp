@@ -6,9 +6,9 @@ std::string Spinach::symbol() {
     if(age < sprout_age) {
         return "#"; // Seedling still; tilled soil
     } else if (age < mature_age) {
-        return "l"; // Sproutling
+        return "s"; // Sproutling
     } else {
-        return "L"; // Fully grown plant (harvestable)
+        return "S"; // Fully grown plant (harvestable)
     }
 }
 

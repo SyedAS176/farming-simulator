@@ -1,0 +1,8 @@
+//
+// Created by smabd on 11/23/2025.
+//
+
+#ifndef FARMING_SIMULATOR_BEET_HPP
+#define FARMING_SIMULATOR_BEET_HPP
+
+#endif //FARMING_SIMULATOR_BEET_HPP
