@@ -15,5 +15,5 @@ public:
     std::string symbol() override;
     void end_day() override;
     bool is_mature() override;
-    bool is_watered() override;
+    void water() override;
 };
