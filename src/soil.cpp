@@ -13,5 +13,5 @@ bool Soil::is_mature() {
 }
 
 void water() {
-    return false; // You would not water just soil
+    // no-op
 }
