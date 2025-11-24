@@ -11,3 +11,7 @@ void Soil::end_day() {
 bool Soil::is_mature() {
     return false; // Soil is never harvestable
 }
+
+void water() {
+    return false; // You would not water just soil
+}

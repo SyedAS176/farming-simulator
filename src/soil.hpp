@@ -9,4 +9,5 @@ public:
     std::string symbol() override;
     void end_day() override;
     bool is_mature() override;
+    void water() override;
 };
