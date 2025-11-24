@@ -12,6 +12,6 @@ bool Soil::is_mature() {
     return false; // Soil is never harvestable therefore cannot become mature
 }
 
-void water() {
+void Soil::water() {
     // no-op
 }
