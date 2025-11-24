@@ -35,4 +35,7 @@ public:
     void move_player_left();
     void move_player_up();
     void move_player_down();
+
+    // Watering logic
+    void water(int row, int column);
 };

@@ -99,3 +99,9 @@ void Farm::move_player_down() {
         player->move_down();                    // Call move_down() method from Player class
     }
 }
+
+//  Watering logic for plants
+void Farm::water(int row, int column) {
+    Plot *current_plot = plots.at(row).at(column);
+    current_plot->water();
+}
