@@ -6,20 +6,25 @@ std::string Lettuce::symbol() {
     if(age < sprout_age) {
         return "#"; // Seedling still; tilled soil
     } else if (age < mature_age) {
-        return "t"; // Not mature yet
+        return "l"; // Sproutling
     } else {
-        return "T"; // Fully grown plant (harvestable)
+        return "L"; // Fully grown plant (harvestable)
     }
 }
 
 void Lettuce::end_day() {
-    age += 1;
+    if (watered) {
+        age += 2;
+    } else {
+        age += 1;
+    }
+    watered = false;
 }
 
 bool Lettuce::is_mature() {
     return age >= mature_age;
 }
 
-bool Lettuce::is_watered() {
-    return age >= sprout_age;
+void Lettuce::water() {
+    watered = true;
 }
