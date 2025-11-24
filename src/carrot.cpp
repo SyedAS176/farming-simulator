@@ -28,3 +28,7 @@ bool Carrot::is_mature() {
 void Carrot::water() {
     watered = true;
 }
+
+int Carrot::get_age() {
+    return age;
+}

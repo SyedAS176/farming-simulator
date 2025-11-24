@@ -16,4 +16,5 @@ public:
     void end_day() override;
     bool is_mature() override;
     void water() override;
+    int get_age();
 };

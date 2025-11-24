@@ -28,3 +28,7 @@ bool Spinach::is_mature() {
 void Spinach::water() {
     watered = true;
 }
+
+int Spinach::get_age() {
+    return age;
+}

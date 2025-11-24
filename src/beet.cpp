@@ -28,3 +28,7 @@ bool Beet::is_mature() {
 void Beet::water() {
     watered = true;
 }
+
+int Beet::get_age() {
+    return age;
+}

@@ -28,3 +28,7 @@ bool Lettuce::is_mature() {
 void Lettuce::water() {
     watered = true;
 }
+
+int Lettuce::get_age() {
+    return age;
+}

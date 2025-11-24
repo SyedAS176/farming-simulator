@@ -28,3 +28,7 @@ bool BrusselsSprouts::is_mature() {
 void BrusselsSprouts::water() {
     watered = true;
 }
+
+int BrusselsSprouts::get_age() {
+    return age;
+}
