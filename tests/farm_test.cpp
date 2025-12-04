@@ -53,7 +53,7 @@ TEST_CASE( "it allows us to plant a carrot" ) {
     Farm farm(1, 2, &player);
     Carrot carrot;
     farm.plant(0, 1, &carrot);
-    REQUIRE( farm.get_symbol(0, 1) == "v" );
+    REQUIRE( farm.get_symbol(0, 1) == "#" );
 }
 
 TEST_CASE( "Carrot grows after end_day()" ) {
@@ -62,9 +62,9 @@ TEST_CASE( "Carrot grows after end_day()" ) {
     Carrot* carrot = new Carrot();
     farm.plant(0, 1, carrot);
 
-    REQUIRE(farm.get_symbol(0, 1) == "v");
+    REQUIRE(farm.get_symbol(0, 1) == "#");
     farm.end_day();
-    REQUIRE(farm.get_symbol(0, 1) == "V");
+    REQUIRE(farm.get_symbol(0, 1) == "c");
 }
 
 TEST_CASE( "Harvest replaces mature carrot with soil" ) {
@@ -73,6 +73,7 @@ TEST_CASE( "Harvest replaces mature carrot with soil" ) {
     Carrot* carrot = new Carrot();
     farm.plant(0, 1, carrot);
 
+    farm.end_day();
     farm.end_day(); // carrot matures
     farm.harvest(0, 1);
     REQUIRE(farm.get_symbol(0, 1) == ".");
@@ -86,7 +87,7 @@ TEST_CASE( "Harvest does not remove immature crops" ) {
 
     // carrot is still immature
     farm.harvest(0, 1);
-    REQUIRE(farm.get_symbol(0, 1) == "v");
+    REQUIRE(farm.get_symbol(0, 1) == "#");
 }
 
 TEST_CASE( "Player cannot move out of bounds" ) {
