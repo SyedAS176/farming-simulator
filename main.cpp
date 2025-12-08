@@ -1,5 +1,7 @@
 #include <iostream>
 #include <algorithm>
+#include <cstdlib>
+#include <ctime>
 
 #include "src/player.hpp"
 #include "src/farm.hpp"
@@ -15,6 +17,8 @@
 #include "src/legend.hpp"
 
 int main() {
+    srand(time(0));  // Seed the random number generator
+
     Player player;
     Farm farm(7, 8, &player);
     FarmPrinter printer(&farm);
