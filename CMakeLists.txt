@@ -36,7 +36,8 @@ add_executable(main main.cpp
         src/beet.cpp
         src/brussels_sprouts.cpp
         src/player.cpp
-        src/legend.cpp)
+        src/legend.cpp
+        src/bunny.cpp)
 
 target_link_libraries(farm_test PRIVATE Catch2::Catch2WithMain)
 target_link_libraries(farm_printer_test PRIVATE Catch2::Catch2WithMain)
