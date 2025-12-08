@@ -163,11 +163,6 @@ void Farm::water(int row, int column) {
 
 // ======= BUNNY LOGIC =======
 
-// Returns bunny object
-Bunny* Farm::get_bunny() const {
-    return bunny;
-}
-
 void Farm::move_bunny_down() {
     if (bunny == nullptr) { // Bunny did not spawn
         return;

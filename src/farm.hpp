@@ -43,9 +43,6 @@ public:
     // Watering logic
     void water(int row, int column);
 
-    // Returns the Bunny object
-    Bunny* get_bunny() const;
-
     // Movement logic methods for the bunny
     void move_bunny_down();
     void move_bunny_left();
