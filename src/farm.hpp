@@ -20,7 +20,7 @@ private:
 
 public:
     // Farm constructor
-    Farm(int rows, int columns, Player *player, double bunny_spawn_probability = 0.05); // Default bunny spawn probability of 5% (will be 0% for unit testing)
+    Farm(int rows, int columns, Player *player, double bunny_spawn_probability = 0.99); // Default bunny spawn probability of 5% (will be 0% for unit testing)
 
     // Farm getter methods
     int number_of_rows();
@@ -53,6 +53,7 @@ public:
     void move_bunny_up();
 
     void move_bunny_away_from_player();   // For scared movement
-    void move_bunny_normal();             // Moves down 1 each day
+    bool is_adjacent_to_bunny(int player_row, int player_column);    // Checks if the player is directly up, down, left, or right from the bunny
 
+    void bunny_spawn(); // Handles bunny spawning probability/logic
 };
