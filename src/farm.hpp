@@ -5,6 +5,7 @@
 
 #include "plot.hpp"
 #include "player.hpp"
+#include "bunny.hpp"
 
 class Farm {
 private:
@@ -14,9 +15,12 @@ private:
     Player *player;
     std::vector<std::vector<Plot *>> plots;
 
+    Bunny* bunny;
+    double bunny_spawn_probability;
+
 public:
     // Farm constructor
-    Farm(int rows, int columns, Player *player);
+    Farm(int rows, int columns, Player *player, double bunny_spawn_probability = 0.05); // Default bunny spawn probability of 5% (will be 0% for unit testing)
 
     // Farm getter methods
     int number_of_rows();
@@ -38,4 +42,17 @@ public:
 
     // Watering logic
     void water(int row, int column);
+
+    // Returns the Bunny object
+    Bunny* get_bunny() const;
+
+    // Movement logic methods for the bunny
+    void move_bunny_down();
+    void move_bunny_left();
+    void move_bunny_right();
+    void move_bunny_up();
+
+    void move_bunny_away_from_player();   // For scared movement
+    void move_bunny_normal();             // Moves down 1 each day
+
 };
