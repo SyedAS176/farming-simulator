@@ -11,9 +11,14 @@ public:
     Bunny(int start_row, int start_column);
 
     // Accessor Methods
-    int get_current_row();
-    int get_current_column();
+    int get_row() const;
+    int get_column() const;
 
     // Mutator methods
     void set_position(int new_row, int new_column);
+
+    // Scared status
+    void scare();
+    void calm();
+    bool is_scared() const;
 };
