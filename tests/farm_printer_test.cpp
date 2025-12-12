@@ -9,42 +9,42 @@
 
 TEST_CASE( "it pretty prints a single plot of land" ) {
     Player player;
-    Farm farm(1, 1, &player);
+    Farm farm(1, 1, &player, 0.0);
     FarmPrinter printer(&farm);
     REQUIRE( printer.pp() == "@ \n" );
 }
 
 TEST_CASE( "it pretty prints a 1x2 farm" ) {
     Player player;
-    Farm farm(1, 2, &player);
+    Farm farm(1, 2, &player, 0.0);
     FarmPrinter printer(&farm);
     REQUIRE( printer.pp() == "@ . \n" );
 }
 
 TEST_CASE( "it pretty prints a 2x1 farm" ) {
     Player player;
-    Farm farm(2, 1, &player);
+    Farm farm(2, 1, &player, 0.0);
     FarmPrinter printer(&farm);
     REQUIRE( printer.pp() == "@ \n. \n" );
 }
 
 TEST_CASE( "it pretty prints a 2x2 farm" ) {
     Player player;
-    Farm farm(2, 2, &player);
+    Farm farm(2, 2, &player, 0.0);
     FarmPrinter printer(&farm);
     REQUIRE( printer.pp() == "@ . \n. . \n" );
 }
 
 TEST_CASE( "it prints a farm with only soil plots" ) {
     Player player;
-    Farm farm(3, 3, &player);
+    Farm farm(3, 3, &player, 0.0);
     FarmPrinter printer(&farm);
     REQUIRE(printer.pp() == "@ . . \n. . . \n. . . \n");
 }
 
 TEST_CASE("it pretty prints a 2x2 farm with player movement") {
     Player player;
-    Farm farm(3, 3, &player);  // 3x3 farm for more space
+    Farm farm(3, 3, &player, 0.0);  // 3x3 farm for more space
     FarmPrinter printer(&farm);
 
     // Initial state - player is at (0, 0)
