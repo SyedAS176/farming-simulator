@@ -20,7 +20,7 @@ private:
 
 public:
     // Farm constructor
-    Farm(int rows, int columns, Player *player, double bunny_spawn_probability = 0.99); // Default bunny spawn probability of 5% (will be 0% for unit testing)
+    Farm(int rows, int columns, Player *player, double bunny_spawn_probability = 0.05); // Default bunny spawn probability of 5% (will be 0% for unit testing)
 
     // Farm getter methods
     int number_of_rows();

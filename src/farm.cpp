@@ -225,6 +225,13 @@ bool Farm::is_adjacent_to_bunny(int player_row, int player_column) {
 }
 
 void Farm::bunny_spawn() {
+
+    // Guarantee: no bunny ever spawns when probability = 0; needed for unit testing to pass
+    if (bunny_spawn_probability <= 0.0) {
+        bunny = nullptr;
+        return;
+    }
+
     // BUNNY SPAWN LOGIC
     int random_percentage_int = std::rand() % 100; // Gives 0-99
     double probability = static_cast<double>(random_percentage_int) / 100.0; // Gives 0.0 - 0.99
