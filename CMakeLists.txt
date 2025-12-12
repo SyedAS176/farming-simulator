@@ -15,8 +15,8 @@ FetchContent_Declare(
 
 FetchContent_MakeAvailable(Catch2)
 
-add_executable(farm_test tests/farm_test.cpp src/farm.cpp src/soil.cpp src/carrot.cpp src/player.cpp)
-add_executable(farm_printer_test tests/farm_printer_test.cpp src/farm_printer.cpp src/farm.cpp src/soil.cpp src/player.cpp)
+add_executable(farm_test tests/farm_test.cpp src/farm.cpp src/soil.cpp src/carrot.cpp src/player.cpp src/bunny.cpp)
+add_executable(farm_printer_test tests/farm_printer_test.cpp src/farm_printer.cpp src/farm.cpp src/soil.cpp src/player.cpp src/bunny.cpp)
 add_executable(player_test tests/player_test.cpp src/player.cpp)
 
 add_executable(soil_test tests/soil_test.cpp src/soil.cpp)
