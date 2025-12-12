@@ -3,6 +3,7 @@
 void print_legend() {
     std::cout << "======= FARMING SIMULATOR LEGEND =======" << std::endl;
     std::cout << "@ : Your player" << std::endl;
+    std::cout << "U : The bunny" << std::endl;
     std::cout << ". : Empty soil plot" << std::endl;
     std::cout << "# : Tilled soil plot" << std::endl;
     std::cout << "c / C : Carrot" << std::endl;
