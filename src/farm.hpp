@@ -35,6 +35,7 @@ public:
 
     // Movement logic methods for the player
     bool in_bounds(int new_row, int new_column);
+    bool on_bunny(int new_row, int new_column);
     void move_player_right();
     void move_player_left();
     void move_player_up();

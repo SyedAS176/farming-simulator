@@ -115,10 +115,17 @@ bool Farm::in_bounds(int new_row, int new_column) {
     return new_row >= 0 && new_row < rows && new_column >= 0 && new_column < columns;
 }
 
+bool Farm::on_bunny(int new_row, int new_column) {
+    if (bunny == nullptr) {
+        return true; // No bunny has spawned = tile is safe to move onto
+    }
+    return !(bunny->get_row() == new_row && bunny->get_column() == new_column); // Check if the bunny's row and column matches the player's next move, if they do, return false, else true
+}
+
 void Farm::move_player_right() {
-    int new_col = player->column() + 1;                // Storing the desired row for moving right
-    if (in_bounds(player->row(), new_col)) { // Determine if Player can move right; ensure movement is not out of bounds
-        player->move_right();                          // Call move_right() method from Player class
+    int new_col = player->column() + 1;                                                              // Storing the desired row for moving right
+    if (in_bounds(player->row(), new_col) && on_bunny(player->row(), new_col)) { // Determine if Player can move right; ensure movement is not out of bounds or onto a bunny
+        player->move_right();                                                                        // Call move_right() method from Player class
     }
     if (bunny != nullptr && is_adjacent_to_bunny(player->row(), player->column())) {    // Check if player is on an adjacent tile to the bunny
         bunny->scare();
@@ -126,9 +133,9 @@ void Farm::move_player_right() {
 }
 
 void Farm::move_player_left() {
-    int new_col = player->column() - 1;                // Storing the desired row for moving left
-    if (in_bounds(player->row(), new_col)) { // Determine if Player can move left; ensure movement is not out of bounds
-        player->move_left();                           // Call move_left() method from Player class
+    int new_col = player->column() - 1;                                                              // Storing the desired row for moving left
+    if (in_bounds(player->row(), new_col) && on_bunny(player->row(), new_col)) { // Determine if Player can move left; ensure movement is not out of bounds or onto a bunny
+        player->move_left();                                                                         // Call move_left() method from Player class
     }
     if (bunny != nullptr && is_adjacent_to_bunny(player->row(), player->column())) {    // Check if player is on an adjacent tile to the bunny
         bunny->scare();
@@ -136,9 +143,9 @@ void Farm::move_player_left() {
 }
 
 void Farm::move_player_up() {
-    int new_row = player->row() - 1;            // Storing the desired row for moving up
-    if (in_bounds(new_row, player->column())) { // Determine if Player can move up; ensure movement is not out of bounds
-        player->move_up();                      // Call move_up() method from Player class
+    int new_row = player->row() - 1;                                                   // Storing the desired row for moving up
+    if (in_bounds(new_row, player->column()) && on_bunny(new_row, player->column())) { // Determine if Player can move up; ensure movement is not out of bounds or onto a bunny
+        player->move_up();                                                             // Call move_up() method from Player class
     }
     if (bunny != nullptr && is_adjacent_to_bunny(player->row(), player->column())) {    // Check if player is on an adjacent tile to the bunny
         bunny->scare();
@@ -146,9 +153,9 @@ void Farm::move_player_up() {
 }
 
 void Farm::move_player_down() {
-    int new_row = player->row() + 1;            // Storing the desired row for moving down
-    if (in_bounds(new_row, player->column())) { // Determine if Player can move down; ensure movement is not out of bounds
-        player->move_down();                    // Call move_down() method from Player class
+    int new_row = player->row() + 1;                                                   // Storing the desired row for moving down
+    if (in_bounds(new_row, player->column()) && on_bunny(new_row, player->column())) { // Determine if Player can move down; ensure movement is not out of bounds or onto a bunny
+        player->move_down();                                                           // Call move_down() method from Player class
     }
     if (bunny != nullptr && is_adjacent_to_bunny(player->row(), player->column())) {    // Check if player is on an adjacent tile to the bunny
         bunny->scare();
