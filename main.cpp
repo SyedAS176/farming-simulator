@@ -20,7 +20,7 @@ int main() {
     srand(time(0));  // Seed the random number generator
 
     Player player;
-    Farm farm(7, 8, &player);
+    Farm farm(7, 11, &player);
     FarmPrinter printer(&farm);
     bool game_in_progress = true;
     std::string player_input;
